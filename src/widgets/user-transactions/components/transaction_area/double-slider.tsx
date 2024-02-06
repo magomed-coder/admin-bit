@@ -25,7 +25,6 @@ const DoubleSlider: React.FC<TransactionProps> = ({
           value={values}
           onChange={onChange}
           renderThumb={(props, state) => {
-            console.log(state.valueNow, state.valueNow + "");
             return <div {...props}>{formatChartDate(state.valueNow)}</div>;
           }}
           min={minDate}

@@ -2,8 +2,6 @@ import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 
 export const formatChartDate = (label: number) => {
-  console.log(label, typeof label);
-
   const date = new Date(label);
 
   if (isNaN(date.getTime())) {
