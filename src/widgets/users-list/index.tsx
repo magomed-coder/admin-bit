@@ -115,15 +115,16 @@ const UsersList: React.FC = () => {
           borderBottom: `1px solid ${theme.colors.borders.main}`,
           paddingBottom: "24px",
           paddingLeft: "16px",
-          fontSize: "22px",
           fontWeight: 600,
+          fontSize: "18px",
 
           [theme.breakpoints.SMALL]: {
             paddingLeft: "24px",
+            fontSize: "20px",
           },
-
           [theme.breakpoints.LARGE]: {
             paddingLeft: "34px",
+            fontSize: "22px",
           },
         }}
       >
@@ -145,7 +146,18 @@ const UsersList: React.FC = () => {
       >
         <Typography
           as="h2"
-          sx={{ fontSize: "22px", fontWeight: 600, marginBottom: "24px" }}
+          sx={{
+            fontWeight: 600,
+            marginBottom: "24px",
+            fontSize: "18px",
+            [theme.breakpoints.SMALL]: {
+              fontSize: "20px",
+            },
+
+            [theme.breakpoints.LARGE]: {
+              fontSize: "22px",
+            },
+          }}
         >
           Пользователи
         </Typography>

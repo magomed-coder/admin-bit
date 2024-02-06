@@ -15,9 +15,10 @@ const cellStyle: CSSProperties = {
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  padding: "14px",
   fontWeight: "500",
   textAlign: "center",
+
+  fontSize: "12px",
 };
 
 interface UsersTableProps {
@@ -60,9 +61,10 @@ const UsersTable: React.FC<UsersTableProps> = ({
           <Box
             as="tr"
             sx={{
-              fontSize: "14px",
               color: theme.colors.text.mild,
               backgroundColor: theme.colors.primary,
+              height: "44px",
+              [theme.breakpoints.XLARGE]: { height: "46px" },
             }}
           >
             <Box
@@ -72,7 +74,7 @@ const UsersTable: React.FC<UsersTableProps> = ({
                 ...cellStyle,
 
                 width: "60%",
-                [theme.breakpoints.SMALL]: { width: "50%" },
+                [theme.breakpoints.XLARGE]: { width: "50%", fontSize: "14px" },
                 [theme.breakpoints.XXLARGE]: { width: "calc(100%/6)" },
               }}
             >
@@ -84,7 +86,10 @@ const UsersTable: React.FC<UsersTableProps> = ({
                 ...cellStyle,
                 width: "40%",
                 [theme.breakpoints.SMALL]: { width: "calc(50%/2)" },
-                [theme.breakpoints.XLARGE]: { width: "calc(50%/4)" },
+                [theme.breakpoints.XLARGE]: {
+                  width: "calc(50%/4)",
+                  fontSize: "14px",
+                },
                 [theme.breakpoints.XXLARGE]: { width: "calc(100%/6)" },
               }}
             >
@@ -99,6 +104,7 @@ const UsersTable: React.FC<UsersTableProps> = ({
                 [theme.breakpoints.XLARGE]: {
                   display: "table-cell",
                   width: "calc(50%/4)",
+                  fontSize: "14px",
                 },
                 [theme.breakpoints.XXLARGE]: { width: "calc(100%/6)" },
               }}
@@ -111,6 +117,8 @@ const UsersTable: React.FC<UsersTableProps> = ({
                 ...cellStyle,
                 display: "none",
 
+                [theme.breakpoints.SMALL]: { fontSize: "14px" },
+                [theme.breakpoints.XLARGE]: { fontSize: "14px" },
                 [theme.breakpoints.XXLARGE]: {
                   display: "table-cell",
                   width: "calc(100%/6)",
@@ -131,7 +139,10 @@ const UsersTable: React.FC<UsersTableProps> = ({
                   width: "calc(50%/2)",
                 },
 
-                [theme.breakpoints.XLARGE]: { width: "calc(50%/4)" },
+                [theme.breakpoints.XLARGE]: {
+                  width: "calc(50%/4)",
+                  fontSize: "14px",
+                },
 
                 [theme.breakpoints.XXLARGE]: { width: "calc(100%/6)" },
               }}
@@ -167,6 +178,7 @@ const UsersTable: React.FC<UsersTableProps> = ({
                 [theme.breakpoints.XLARGE]: {
                   display: "table-cell",
                   width: "calc(50%/4)",
+                  fontSize: "14px",
                 },
 
                 [theme.breakpoints.XXLARGE]: { width: "calc(100%/6)" },
@@ -187,29 +199,69 @@ const UsersTable: React.FC<UsersTableProps> = ({
                 color: theme.colors.text.main,
                 borderBottom: `1px solid ${theme.colors.borders.main}`,
                 cursor: "pointer",
+                height: "64px",
               }}
             >
-              <Box as="td" sx={{ ...cellStyle, padding: "23px" }}>
+              <Box
+                as="td"
+                sx={{
+                  ...cellStyle,
+                  padding: "23px",
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                }}
+              >
                 {user.email}
               </Box>
-              <Box as="td" sx={{ ...cellStyle, padding: "23px" }}>
+              <Box
+                as="td"
+                sx={{
+                  ...cellStyle,
+                  padding: "23px",
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                }}
+              >
                 {user.name}
               </Box>
-              <Box as="td" sx={{ ...cellStyle, padding: "23px" }}>
+              <Box
+                as="td"
+                sx={{
+                  ...cellStyle,
+                  padding: "23px",
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                }}
+              >
                 {user.role}
               </Box>
 
-              <Box as="td" sx={{ ...cellStyle, padding: "23px" }}>
+              <Box
+                as="td"
+                sx={{
+                  ...cellStyle,
+                  padding: "23px",
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                }}
+              >
                 {user.subscription}
               </Box>
 
-              <Box as="td" sx={{ ...cellStyle, padding: "23px" }}>
+              <Box
+                as="td"
+                sx={{
+                  ...cellStyle,
+                  padding: "23px",
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                }}
+              >
                 {user.tokens} TKN
               </Box>
 
               <Box
                 as="td"
-                sx={{ ...cellStyle, padding: "23px" }}
+                sx={{
+                  ...cellStyle,
+                  padding: "23px",
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                }}
                 className="no-click-action"
               >
                 <Box

@@ -20,9 +20,9 @@ const cellStyle: CSSProperties = {
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  padding: "12px",
   fontWeight: "500",
   textAlign: "center",
+  fontSize: "12px",
 };
 
 interface TransactionTableProps {
@@ -45,26 +45,65 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
             backgroundColor: theme.colors.primary,
           }}
         >
-          <tr style={{ height: "48px", color: theme.colors.text.mild }}>
-            <Box as="th" sx={{ borderRadius: "10px 0 0 0", ...cellStyle }}>
+          <Box
+            as="tr"
+            sx={{
+              height: "44px",
+              color: theme.colors.text.mild,
+              [theme.breakpoints.LARGE]: { height: "46px" },
+            }}
+          >
+            <Box
+              as="th"
+              sx={{
+                borderRadius: "10px 0 0 0",
+                ...cellStyle,
+                [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+              }}
+            >
               Тип
             </Box>
-            <Box as="th" sx={{ ...cellStyle }}>
+            <Box
+              as="th"
+              sx={{
+                ...cellStyle,
+                [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+              }}
+            >
               Сумма
             </Box>
-            <Box as="th" sx={{ borderRadius: "0 10px 0 0", ...cellStyle }}>
+            <Box
+              as="th"
+              sx={{
+                borderRadius: "0 10px 0 0",
+                ...cellStyle,
+                [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+              }}
+            >
               Дата
             </Box>
-          </tr>
+          </Box>
         </thead>
 
         <tbody>
           {transactions.map((transaction) => (
-            <tr
+            <Box
+              as="tr"
               key={transaction.id}
-              style={{ height: "64px", cursor: "pointer" }}
+              sx={{
+                height: "64px",
+                cursor: "pointer",
+                borderBottom: `1px solid ${theme.colors.borders.main}`,
+              }}
             >
-              <Box as="td" sx={{ ...cellStyle, color: theme.colors.text.main }}>
+              <Box
+                as="td"
+                sx={{
+                  ...cellStyle,
+                  color: theme.colors.text.main,
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                }}
+              >
                 {TransactionAction[transaction.type]}
               </Box>
               <Box
@@ -73,20 +112,31 @@ const TransactionTable: React.FC<TransactionTableProps> = ({
                   ...cellStyle,
                   color: ActionTypeColors[transaction.type],
                   whiteSpace: "normal",
+                  [theme.breakpoints.XLARGE]: { fontSize: "14px" },
                 }}
               >
                 {transaction.type == ActionType.WRITE_OFF ? "-" : "+"}
                 {transaction.amount} BTKN
               </Box>
               <Box as="td" sx={{ ...cellStyle }}>
-                <Typography sx={{ fontSize: "14px", fontWeight: 500 }}>
+                <Typography
+                  sx={{
+                    fontSize: "12px",
+                    [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                  }}
+                >
                   {format(parseISO(transaction.created_at), "dd.MM.yy")},
                 </Typography>
-                <Typography sx={{ fontSize: "14px", fontWeight: 500 }}>
+                <Typography
+                  sx={{
+                    fontSize: "12px",
+                    [theme.breakpoints.XLARGE]: { fontSize: "14px" },
+                  }}
+                >
                   {format(parseISO(transaction.created_at), "HH:mm:ss")}
                 </Typography>
               </Box>
-            </tr>
+            </Box>
           ))}
         </tbody>
       </Box>
