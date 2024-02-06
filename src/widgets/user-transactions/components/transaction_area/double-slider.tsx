@@ -47,9 +47,7 @@ const BoxContainer: React.FC<BoxContainerProps> = ({ children }) => {
         ".slider": {
           width: "100%",
           height: "100%",
-          "!important": {
-            position: "absolute !important" as "absolute", // If !important is necessary
-          },
+          position: "absolute !important" as "absolute",
           top: 0,
           left: 0,
         },
