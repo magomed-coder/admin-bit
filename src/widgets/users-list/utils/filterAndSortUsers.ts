@@ -1,4 +1,4 @@
-import { SortOrder, TableUser, User } from "./types/usersListTypes";
+import { SortOrder, TableUser, User } from "../types/usersListTypes";
 
 // Function to filter and sort users
 export const filterAndSortUsers = (

@@ -16,7 +16,7 @@ import Box from "../../shared/components/Box";
 import { theme } from "../../app/Theme";
 import UsersTable from "./components/UsersTable";
 import SearchInput from "./components/InputField";
-import { filterAndSortUsers } from "./utils";
+import { filterAndSortUsers } from "./utils/filterAndSortUsers";
 
 const UsersList: React.FC = () => {
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");

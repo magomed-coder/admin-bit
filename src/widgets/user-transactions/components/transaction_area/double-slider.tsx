@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slider";
-import { format } from "date-fns";
 import Box from "../../../../shared/components/Box";
+import { formatChartDate } from "../../utils/formatDate";
 
 interface TransactionProps {
   minDate: number;
@@ -24,9 +24,10 @@ const DoubleSlider: React.FC<TransactionProps> = ({
           thumbClassName="data-thumb"
           value={values}
           onChange={onChange}
-          renderThumb={(props, state) => (
-            <div {...props}>{format(state.valueNow, "dd LLL HH:mm")}</div>
-          )}
+          renderThumb={(props, state) => {
+            console.log(state.valueNow, state.valueNow + "");
+            return <div {...props}>{formatChartDate(state.valueNow)}</div>;
+          }}
           min={minDate}
           max={maxDate}
         />
